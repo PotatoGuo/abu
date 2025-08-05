@@ -9,7 +9,9 @@ from __future__ import print_function
 import itertools
 import logging
 import math
-from collections import Iterable
+# from collections import Iterable
+# 3.9版本以上使用下面import
+from collections.abc import Iterable
 from enum import Enum
 
 import numpy as np
