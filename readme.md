@@ -139,7 +139,7 @@
 
 ### 部署
 
-推荐使用Anaconda部署Python环境，详见 [量化环境部署](https://github.com/bbfamily/abu/blob/master/abupy_lecture/0-abupy%E9%87%8F%E5%8C%96%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2(ABU%E9%87%8F%E5%8C%96%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3).ipynb)
+推荐使用Anaconda部署Python环境，python版本3.7，pandas版本0.24.2
 
 ### 测试
 
