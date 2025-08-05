@@ -11,7 +11,7 @@ try:
     from collections import OrderedDict
 except ImportError:
     from ..ExtBu.odict import OrderedDict
-from collections import namedtuple, Iterable
+from collections.abc import namedtuple, Iterable
 
 import logging
 import math
