@@ -9,9 +9,7 @@ from __future__ import absolute_import
 import itertools
 import logging
 import os
-# from collections import Iterable
-# 3.9版本以上使用下面import
-from collections.abc import Iterable
+from collections import Iterable
 from math import pi
 
 import bokeh.plotting as bp

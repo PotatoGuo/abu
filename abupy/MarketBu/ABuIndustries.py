@@ -7,9 +7,7 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import division
 
-# from collections import Iterable
-# 3.9版本以上使用下面import
-from collections.abc import Iterable
+from collections import Iterable
 import logging
 from fnmatch import fnmatch
 

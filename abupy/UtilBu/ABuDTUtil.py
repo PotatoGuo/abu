@@ -12,9 +12,7 @@ import logging
 import pdb
 import time
 import warnings
-# from collections import Iterable
-# 3.9版本以上使用下面import
-from collections.abc import Iterable
+from collections import Iterable
 from contextlib import contextmanager
 
 import numpy as np

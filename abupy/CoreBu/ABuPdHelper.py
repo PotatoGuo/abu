@@ -8,9 +8,7 @@ from __future__ import division
 from __future__ import print_function
 
 import functools
-# from collections import Iterable
-# 3.9版本以上使用下面import
-from collections.abc import Iterable
+from collections import Iterable
 
 import pandas as pd
 from ..CoreBu.ABuFixes import partial
