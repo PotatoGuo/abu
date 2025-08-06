@@ -41,6 +41,9 @@ def sample_611_1(show=True):
     6.1.1 线性回归
     :return:
     """
+    """
+    本示例OSL因变量Y为tsla收盘价，自变量X为序列0，1，2 .... len(y)，summary打印出来结果可以看出基本不相关，X因子无效
+    """
     import statsmodels.api as sm
     from statsmodels import regression
 
