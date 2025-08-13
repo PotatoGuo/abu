@@ -97,6 +97,9 @@ def sample_612():
     6.1.2 多项式回归
     :return:
     """
+    """
+    本函数中用到的切比雪夫多项式用于计算拟合值，在量化中可以用于找到相似走势曲线股票
+    """
     import itertools
 
     # 生成9个subplots 3*3
@@ -636,6 +639,7 @@ def sample_624():
         # 返回-my_life，这样最小的结果其实是幸福指数最大的权重配比
         return -my_life(weights)[1]
 
+    # scipy.optimize.brute搜索目标函数全局最小值，返回最小值的坐标，试用非凸函数寻找最优
     opt_global = sco.brute(minimize_happiness_global,
                            ((0, 1.1, 0.1), (0, 1.1, 0.1), (0, 1.1, 0.1)))
     print(opt_global)
@@ -666,6 +670,8 @@ def sample_625():
 
     # 初始化猜测最优参数，这里使用brute计算出的全局最优参数作为guess
     guess = [0.5, 0.2, 0.3]
+    # sco.minimize只适用凸函数最优求解，minimize_happiness_local是非凸函数，求会失败
+    # 应该使用brute函数配合蒙特卡洛方法求局部最优解
     opt_local = sco.minimize(minimize_happiness_local, guess,
                              method=method, bounds=bounds,
                              constraints=constraints)
