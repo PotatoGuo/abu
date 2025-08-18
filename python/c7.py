@@ -164,7 +164,7 @@ def sample_712_3(show=True):
 
     # shift(1)及np.log下面会有内容详细讲解
     test_kl['benchmark_profit'] = \
-        np.log(test_kl['close'] / test_kl['close'].shift(1))
+        np.log(test_kl['close'] / test_kl['close'].shift(1)) # shift(1)表示将所有值向移一个单位，这里的意思是：今收价/昨收价
 
     # 仅仅为了说明np.log的意义，添加了benchmark_profit2，只为对比数据是否一致
     test_kl['benchmark_profit2'] = \
