@@ -172,10 +172,14 @@ def sample_712_3(show=True):
 
     if show:
         # 可视化对比两种方式计算出的profit是一致的
-        test_kl[['benchmark_profit', 'benchmark_profit2']].plot(subplots=True,
-                                                                grid=True,
-                                                                figsize=(
-                                                                    14, 7))
+        _, axs = plt.subplots(nrows=2, ncols=1, figsize=(14, 5))
+        axs[0].set_title('benchmark_profit')
+        # 在相同坐标系下，同样的x，插值的y值使r.绘制（红色点）
+        axs[0].plot(test_kl[''], test_kl['benchmark_profit'])
+        # test_kl[['benchmark_profit', 'benchmark_profit2']].plot(subplots=True,
+                                                                # grid=True,
+                                                                # figsize=(
+                                                                    # 14, 7))
         plt.show()
 
     # test_kl['close'].shift(1): test_kl['close'] / test_kl['close'].shift(1) = 今日收盘价格序列／昨日收盘价格序列
