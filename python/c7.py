@@ -251,6 +251,7 @@ def sample_713():
     # expan_max = pd.expanding_max(kl_pd['close'])
     expan_max = pd_expanding_max(kl_pd['close'])
     # fillna使用序列对应的expan_max
+    # 填充前N1个NaN数据为前N1最大值
     kl_pd['n1_high'].fillna(value=expan_max, inplace=True)
     # 表7-5所示
     print('kl_pd[0:5]:\n', kl_pd[0:5])
@@ -274,6 +275,7 @@ def sample_713():
     sell_index = kl_pd[kl_pd['close'] < kl_pd['n2_low'].shift(1)].index
     kl_pd.loc[sell_index, 'signal'] = 0
 
+    # 饼图展示买入和卖出号占比
     kl_pd.signal.value_counts().plot(kind='pie', figsize=(5, 5))
     plt.show()
 
@@ -321,9 +323,10 @@ def sample_722_1(show=True):
         # 以时间驱动100个交易日，生成100个交易日走势
         for ind in np.arange(0, trade_day - 1):
             if ind == 0:
-                # 第一个交易日50%的概率结果是win: win = np.random.binomial(1, 0.5)
+                # 第一个交易日50%的概率结果是win: 
+                win = np.random.binomial(1, 0.5)
                 # 第一个交易日100%的概率win
-                win = np.random.binomial(1, 1)
+                # win = np.random.binomial(1, 1)
             else:
                 # 非第一个交易日它的涨跌与只与前一天的涨跌相关,如果前一天是上涨的
                 # 那么它今天仍然是涨，如果它前一天是下跌的，那它今天就是跌
