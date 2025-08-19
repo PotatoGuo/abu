@@ -204,6 +204,9 @@ def sample_712_4():
     test_kl['trend_profit'].plot(figsize=(14, 7))
     plt.show()
 
+    # 对benchmark_profit, trend_profit分别累加，计算累计收益率
+    # 其中benchmark_profit结果表示从头到尾持的的股票总收益
+    # trend_profit是策略按照收盘价买入/卖出操作，最后得到的计收益率
     test_kl[['benchmark_profit', 'trend_profit']].cumsum().plot(grid=True,
                                                                 figsize=(
                                                                     14, 7))
