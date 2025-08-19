@@ -175,7 +175,9 @@ def sample_712_3(show=True):
         _, axs = plt.subplots(nrows=2, ncols=1, figsize=(14, 5))
         axs[0].set_title('benchmark_profit')
         # 在相同坐标系下，同样的x，插值的y值使r.绘制（红色点）
-        axs[0].plot(np.arange(0, len(test_kl)), test_kl['benchmark_profit'])
+        axs[0].plot(test_kl.index, test_kl['benchmark_profit'])
+        axs[1].set_title('benchmark_profit2')
+        axs[1].plot(test_kl.index, test_kl['benchmark_profit2'])
         # test_kl[['benchmark_profit', 'benchmark_profit2']].plot(subplots=True,
                                                                 # grid=True,
                                                                 # figsize=(
