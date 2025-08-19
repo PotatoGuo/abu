@@ -324,9 +324,9 @@ def sample_722_1(show=True):
         for ind in np.arange(0, trade_day - 1):
             if ind == 0:
                 # 第一个交易日50%的概率结果是win: 
-                win = np.random.binomial(1, 0.5)
+                # win = np.random.binomial(1, 0.5)
                 # 第一个交易日100%的概率win
-                # win = np.random.binomial(1, 1)
+                win = np.random.binomial(1, 1)
             else:
                 # 非第一个交易日它的涨跌与只与前一天的涨跌相关,如果前一天是上涨的
                 # 那么它今天仍然是涨，如果它前一天是下跌的，那它今天就是跌
